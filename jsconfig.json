@@ -1,0 +1,21 @@
+// Sets up some path autocomplete functionality and enables customization
+// of vscodes javascript complilation options. The jsconfig.json file is
+// really just a tsconfig (typescript) file in the background with allowJS
+// set to true.
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["./src/*"],
+            "resources/*": ["./resources/*"],
+            "styles/*": ["./styles/*"],
+            "test/*": ["./test/*"]
+        },
+        "jsx": "react"
+    },
+    "include": [
+        "src/**/*",
+        "test/**/*"
+    ]
+}
