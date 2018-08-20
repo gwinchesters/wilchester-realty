@@ -5,7 +5,7 @@ import { WRITE_LOGIN_SUCCESS } from "src/actions/session";
 const sess = window.sessionStorage;
 
 const initialState = Immutable.fromJS({
-	isAdmin: sess.getItem("isAdmin") ? sess.getItem("isAdmin") : false
+	isAdmin: sess.getItem("isAdmin") === "true" ? true : false
 });
 /**
  *

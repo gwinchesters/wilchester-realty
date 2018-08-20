@@ -3,13 +3,19 @@ import PropTypes from "prop-types";
 
 import AddPropertyContainer from "src/containers/AddPropertyContainer";
 import EditPropertyContainer from "src/containers/EditPropertyContainer";
+import ViewPropertyContainer from "src/containers/ViewPropertyContainer";
+import DeletePropertyContainer from "src/containers/DeletePropertyContainer";
 
 export const MODAL_TYPE_ADD_PROPERTY = "MODAL_TYPE_ADD_PROPERTY";
 export const MODAL_TYPE_EDIT_PROPERTY = "MODAL_TYPE_EDIT_PROPERTY";
+export const MODAL_TYPE_VIEW_PROPERTY = "MODAL_TYPE_VIEW_PROPERTY";
+export const MODAL_TYPE_DELETE_PROPERTY = "MODAL_TYPE_DELETE_PROPERTY";
 
 const containers = {
 	[MODAL_TYPE_ADD_PROPERTY]: AddPropertyContainer,
-	[MODAL_TYPE_EDIT_PROPERTY]: EditPropertyContainer
+	[MODAL_TYPE_EDIT_PROPERTY]: EditPropertyContainer,
+	[MODAL_TYPE_VIEW_PROPERTY]: ViewPropertyContainer,
+	[MODAL_TYPE_DELETE_PROPERTY]: DeletePropertyContainer
 };
 
 /**

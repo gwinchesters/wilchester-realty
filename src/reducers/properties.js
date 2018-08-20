@@ -3,7 +3,8 @@ import Immutable from "immutable";
 import {
 	WRITE_UPDATE_SELECTED_PROPERTY,
 	WRITE_SET_PROPERTIES,
-	WRITE_ADD_UPDATE_PROPERTY
+	WRITE_ADD_UPDATE_PROPERTY,
+	WRITE_DELETE_PROPERTY
 } from "src/actions/properties";
 
 const initialState = Immutable.fromJS({
@@ -47,6 +48,14 @@ function propertiesReducer(state = initialState, action) {
 					"selectedProperty",
 					Immutable.fromJS(selectedProp)
 				);
+			});
+		case WRITE_DELETE_PROPERTY:
+			return state.withMutations((newState) => {
+				const propertiesList = state.get("properties").toJS();
+
+				delete propertiesList[action.id];
+
+				newState.set("properties", Immutable.fromJS(propertiesList));
 			});
 		default:
 			return state;

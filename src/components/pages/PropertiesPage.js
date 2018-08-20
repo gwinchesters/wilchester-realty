@@ -100,6 +100,7 @@ class PropertiesPage extends Component {
 									containerElement={containerElement}
 									mapElement={mapElement}
 									properties={properties}
+									dispatch={dispatch}
 								/>
 							</div>
 						</section>

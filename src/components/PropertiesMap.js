@@ -5,13 +5,25 @@ import MapStyle from "src/util/mapStyle.json";
 
 import MapMarker from "src/components/MapMarker";
 
+/**
+ *
+ */
 class PropertiesMap extends Component {
+	/**
+	 *
+	 */
 	render() {
-		const { properties } = this.props;
+		const { properties, dispatch } = this.props;
 		const markers = [];
 
 		properties.forEach((property, index) => {
-			markers.push(<MapMarker key={index} property={property} />);
+			markers.push(
+				<MapMarker
+					key={index}
+					property={property}
+					dispatch={dispatch}
+				/>
+			);
 		});
 
 		const center = { lat: 33.5, lng: -81.454145 };
@@ -29,7 +41,8 @@ class PropertiesMap extends Component {
 }
 
 PropertiesMap.propTypes = {
-	properties: PropTypes.object
+	properties: PropTypes.object,
+	dispatch: PropTypes.func
 };
 
 export default withScriptjs(withGoogleMap(PropertiesMap));

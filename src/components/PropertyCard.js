@@ -4,9 +4,12 @@ import PropTypes from "prop-types";
 import Immutable from "immutable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 /* Internal Dependencies */
-import { updateSelectedProperty, removeProperty } from "src/actions/properties";
+import { updateSelectedProperty } from "src/actions/properties";
 import { openModal } from "src/actions/modal";
-import { MODAL_TYPE_EDIT_PROPERTY } from "src/components/modal/Modal";
+import {
+	MODAL_TYPE_EDIT_PROPERTY,
+	MODAL_TYPE_DELETE_PROPERTY
+} from "src/components/modal/Modal";
 
 /**
  *
@@ -39,7 +42,8 @@ class PropertyCard extends Component {
 	removeProperty() {
 		const { property, dispatch } = this.props;
 
-		dispatch(removeProperty(property.get("id")));
+		dispatch(updateSelectedProperty(property.get("id")));
+		dispatch(openModal(MODAL_TYPE_DELETE_PROPERTY));
 	}
 
 	/**
@@ -63,7 +67,10 @@ class PropertyCard extends Component {
 						>
 							<FontAwesomeIcon icon="edit" />
 						</a>
-						<a className="card-footer-item">
+						<a
+							className="card-footer-item"
+							onClick={this.removeProperty}
+						>
 							<FontAwesomeIcon icon="trash-alt" />
 						</a>
 					</footer>

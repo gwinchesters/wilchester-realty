@@ -9,6 +9,7 @@ import Button from "src/components/Button";
 import { getProperties } from "src/actions/properties";
 import { openModal } from "src/actions/modal";
 import { MODAL_TYPE_ADD_PROPERTY } from "src/components/modal/Modal";
+import Loader from "src/components/Loader";
 
 /**
  *
@@ -40,12 +41,14 @@ class ManagePropertiesPage extends Component {
 							dispatch(openModal(MODAL_TYPE_ADD_PROPERTY));
 						}}
 					/>
-					{showGrid && (
+					{showGrid ? (
 						<PropertiesGrid
 							isAdmin={true}
 							properties={properties}
 							dispatch={dispatch}
 						/>
+					) : (
+						<Loader />
 					)}
 				</div>
 			</section>

@@ -14,9 +14,7 @@ class NavBar extends Component {
 		return (
 			<nav className="navbar is-dark">
 				<div className="navbar-brand">
-					<NavLink className="navbar-item" to="/">
-						<img alt="Logo" src={logoSrc} />
-					</NavLink>
+					<img alt="Logo" src={logoSrc} />
 					<a
 						role="button"
 						className="navbar-burger"
@@ -29,7 +27,14 @@ class NavBar extends Component {
 					</a>
 				</div>
 				<div className="navbar-menu">
-					<div className="navbar-start" />
+					<div className="navbar-start">
+						<NavLink className="navbar-item" to="/">
+							Home
+						</NavLink>
+						<NavLink className="navbar-item" to="/properties">
+							Properties
+						</NavLink>
+					</div>
 				</div>
 			</nav>
 		);

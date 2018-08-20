@@ -6651,10 +6651,39 @@ body {
 /* LOGIN PAGE */
 .login-page {
   background-color: #b5b5b5;
-  height: 60vh; }
+  height: 80vh; }
   .login-page .box {
     width: 50%;
     margin: auto; }
+
+/* LOADER */
+.loading {
+  margin: auto;
+  position: relative;
+  width: 6px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: pulse 750ms infinite;
+  animation-delay: 250ms; }
+  .loading:before, .loading:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 16px;
+    width: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 750ms infinite; }
+  .loading:before {
+    left: -12px; }
+  .loading:after {
+    left: 12px;
+    animation-delay: 500ms; }
+
+@keyframes pulse {
+  50% {
+    background: white; } }
 
 /* UTILS */
 .center {

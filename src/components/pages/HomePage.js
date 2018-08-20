@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Immutable from "immutable";
+import Loader from "src/components/Loader";
 
 /**
  * HomePage Component
@@ -34,7 +35,9 @@ class HomePage extends Component {
 
 		return (
 			<section className="home-page">
-				{!isLoading && (
+				{isLoading ? (
+					<Loader />
+				) : (
 					<div className="container padding-top-md">
 						<article className="box">
 							<p className={textClass}>{missionStatement}</p>
