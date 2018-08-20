@@ -1,28 +1,26 @@
 /* External Dependencies */
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 /**
- *
- *
- * @class Input
- * @extends {Component}
+ * Stateless Input component
+ * @param {Object} input Input props
+ * @param {string} inputType Type of input
  */
-class Input extends Component {
-	/**
-	 *
-	 *
-	 * @returns
-	 * @memberof Input
-	 */
-	render() {
-		const { input } = this.props;
-		return <input className="input" {...input} />;
-	}
-}
+const Input = ({ input, inputType = "text", placeholder }) => {
+	return (
+		<input
+			className="input"
+			type={inputType}
+			placeholder={placeholder}
+			{...input}
+		/>
+	);
+};
 
 Input.propTypes = {
-	input: PropTypes.object
+	input: PropTypes.object,
+	inputType: PropTypes.string
 };
 
 export default Input;

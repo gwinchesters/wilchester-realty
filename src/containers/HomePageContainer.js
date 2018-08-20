@@ -1,66 +1,26 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+/** External Dependencies */
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Immutable from "immutable";
-
+/** Internal Dependencies */
+import HomePage from "src/components/pages/HomePage";
 import { getHomePageTextBlobs } from "src/actions/main";
 
 /**
- * HomePageContainer component
- * TODO: Update this to purely contain map state to props
+ * Maps any functions that dispatch actions to the redux store to the child
+ * component
+ * @param {Function} dispatch Dispatch action to redux
  */
-class HomePageContainer extends Component {
-	/**
-	 * Creates the HomePageContainer component
-	 * @param {Object} props Props passed to the component
-	 */
-	constructor(props) {
-		super(props);
-
-		props.dispatch(getHomePageTextBlobs());
-	}
-	/**
-	 * Renders the HomePageContainer comonent
-	 * @returns {JSX}
-	 */
-	render() {
-		const { textBlobs } = this.props;
-		const missionStatement = textBlobs.get("missionStatement");
-		const textClass =
-			"is-italic has-text-weight-semibold has-text-link is-size-5";
-		const isLoading = textBlobs.size ? false : true;
-
-		return (
-			<div className="hero is-fullheight is-grey">
-				{!isLoading && (
-					<div className="container margin-top-lg margin-bottom-lg">
-						<article className="box">
-							<p className={textClass}>{missionStatement}</p>
-						</article>
-						<div className="margin-top-lg center">
-							<Link
-								className="button is-info is-medium"
-								to="/properties"
-							>
-								View Properties
-							</Link>
-						</div>
-					</div>
-				)}
-			</div>
-		);
-	}
+function mapDispatchToProps(dispatch) {
+	return {
+		getTextBlobs: () => {
+			dispatch(getHomePageTextBlobs());
+		}
+	};
 }
 
-HomePageContainer.propTypes = {
-	textBlobs: PropTypes.instanceOf(Immutable.Map),
-	dispatch: PropTypes.func
-};
-
 /**
- *
- * @param {*} state
+ * Maps the state of the redux store and registers any stored value with the
+ * child component by passing it in as a property
+ * @param {Object} state
  */
 function mapStateToProps(state) {
 	return {
@@ -68,4 +28,7 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(HomePageContainer);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(HomePage);

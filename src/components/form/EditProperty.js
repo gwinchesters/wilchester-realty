@@ -111,12 +111,12 @@ class EditProperty extends Component {
 				<ModalFooter>
 					<Button
 						text={"Submit"}
-						style={"is-success"}
+						type={"is-success"}
 						onClickCallback={handleSubmit}
 					/>
 					<Button
 						text={"Cancel"}
-						style={"is-default"}
+						type={"is-default"}
 						onClickCallback={this.closeModal}
 					/>
 				</ModalFooter>

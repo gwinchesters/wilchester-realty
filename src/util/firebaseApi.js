@@ -101,14 +101,8 @@ export function deleteProperty(id) {
  * @param {*} email
  * @param {*} password
  */
-export function login(email, password) {
+export function login(credentials) {
 	return firebase
 		.auth()
-		.signInWithEmailAndPassword(email, password)
-		.then(() => {
-			alert("Success!");
-		})
-		.catch((e) => {
-			alert(e);
-		});
+		.signInWithEmailAndPassword(credentials.email, credentials.password);
 }

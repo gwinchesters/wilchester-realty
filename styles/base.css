@@ -6635,6 +6635,34 @@ body {
   padding: 0;
   font-family: sans-serif; }
 
+/* HOME PAGE */
+.home-page {
+  background-color: #b5b5b5;
+  height: 80vh; }
+
+/* PROPERTIES PAGE */
+.properties-page {
+  background-color: #b5b5b5; }
+
+.map-container {
+  height: 100vh;
+  width: 100%; }
+
+/* LOGIN PAGE */
+.login-page {
+  background-color: #b5b5b5;
+  height: 60vh; }
+  .login-page .box {
+    width: 50%;
+    margin: auto; }
+
+/* UTILS */
+.center {
+  text-align: center; }
+
+.black {
+  background-color: black; }
+
 .margin-none {
   margin: 0; }
 

@@ -46,17 +46,16 @@ class PropertyCard extends Component {
 	 *
 	 */
 	render() {
-		const { property } = this.props;
+		const { property, isAdmin } = this.props;
 		const title = property.get("title");
-		let showFooter = false;
 
 		return (
 			<div className="card">
 				<header className="card-header">
 					<p className="card-header-title">{title}</p>
 				</header>
-				<div className="card-content" />
-				{showFooter && (
+				<div className="card-content">{"What needs to go here"}</div>
+				{isAdmin && (
 					<footer className="card-footer">
 						<a
 							className="card-footer-item"
@@ -76,6 +75,7 @@ class PropertyCard extends Component {
 
 PropertyCard.propTypes = {
 	property: PropTypes.instanceOf(Immutable.Map),
+	isAdmin: PropTypes.bool,
 	dispatch: PropTypes.func
 };
 

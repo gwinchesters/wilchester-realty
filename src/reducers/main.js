@@ -3,7 +3,8 @@ import Immutable from "immutable";
 import { WRITE_GET_TEXT_BLOBS_SUCCESS } from "src/actions/main";
 
 const initialState = Immutable.fromJS({
-	textBlobs: Immutable.fromJS({})
+	textBlobs: Immutable.fromJS({}),
+	isAdmin: false
 });
 
 /**

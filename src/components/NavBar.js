@@ -15,7 +15,7 @@ class NavBar extends Component {
 			<nav className="navbar is-dark">
 				<div className="navbar-brand">
 					<NavLink className="navbar-item" to="/">
-						<img src={logoSrc} />
+						<img alt="Logo" src={logoSrc} />
 					</NavLink>
 					<a
 						role="button"

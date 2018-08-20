@@ -18,7 +18,14 @@ const loadingElement = <div style={{ height: "100%" }} />;
 const containerElement = <div style={{ height: "700px" }} />;
 const mapElement = <div style={{ height: "100%" }} />;
 
+/**
+ *
+ */
 class PropertiesPage extends Component {
+	/**
+	 *
+	 * @param {*} props
+	 */
 	constructor(props) {
 		super(props);
 
@@ -29,14 +36,21 @@ class PropertiesPage extends Component {
 		this.switchActiveContent = this.switchActiveContent.bind(this);
 	}
 
+	/**
+	 *
+	 * @param {*} activeContent
+	 */
 	switchActiveContent(activeContent) {
 		this.setState({
 			activeContent: activeContent
 		});
 	}
+
+	/**
+	 *
+	 */
 	render() {
 		const { properties, dispatch } = this.props;
-		const isAdmin = true;
 		const mapActive = this.state.activeContent === PROPERTIES_MAP;
 		const gridActive = this.state.activeContent === PROPERTIES_GRID;
 		const mapBtnClass = mapActive
@@ -92,7 +106,6 @@ class PropertiesPage extends Component {
 					)}
 					{gridActive && (
 						<PropertiesGrid
-							isAdmin={isAdmin}
 							dispatch={dispatch}
 							properties={properties}
 						/>

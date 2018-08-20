@@ -17,8 +17,8 @@ class Button extends Component {
 	 * @memberof Button
 	 */
 	render() {
-		const { text, style, position, onClickCallback } = this.props;
-		const classVal = "button " + style + " " + position;
+		const { text, type, position, onClickCallback } = this.props;
+		const classVal = "button " + type + " " + position;
 
 		return (
 			<a
@@ -38,7 +38,7 @@ class Button extends Component {
 
 Button.propTypes = {
 	text: PropTypes.string,
-	style: PropTypes.string,
+	type: PropTypes.string,
 	position: PropTypes.string,
 	onClickCallback: PropTypes.any
 };

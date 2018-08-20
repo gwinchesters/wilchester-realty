@@ -5,16 +5,16 @@ import PropTypes from "prop-types";
 /* Internal Dependencies */
 import Tile from "src/components/Tile";
 import PropertyCard from "src/components/PropertyCard";
-import Button from "src/components/Button";
-import { openModal } from "src/actions/modal";
-import { MODAL_TYPE_ADD_PROPERTY } from "src/components/modal/Modal";
 
 /**
  * Properties Grid component
  */
 class PropertiesGrid extends Component {
+	/**
+	 * Renders the Properties Grid Component
+	 */
 	render() {
-		const { properties, dispatch } = this.props;
+		const { properties, isAdmin, dispatch } = this.props;
 
 		const rowLists = {};
 		const rowsListComponent = [];
@@ -32,7 +32,11 @@ class PropertiesGrid extends Component {
 
 			const propertyBox = (
 				<Tile type="is-child">
-					<PropertyCard property={property} dispatch={dispatch} />
+					<PropertyCard
+						property={property}
+						isAdmin={isAdmin}
+						dispatch={dispatch}
+					/>
 				</Tile>
 			);
 
@@ -68,13 +72,6 @@ class PropertiesGrid extends Component {
 
 		return (
 			<div>
-				<Button
-					text={"Add Property"}
-					style="is-primary"
-					onClickCallback={() => {
-						dispatch(openModal(MODAL_TYPE_ADD_PROPERTY));
-					}}
-				/>
 				<div className="padding-top-lg padding-bottom-lg">
 					{rowsListComponent}
 				</div>
