@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Immutable from "immutable";
 import Loader from "src/components/Loader";
 
+import src from "resources/img/homepageArt.png";
+
 /**
  * HomePage Component
  */
@@ -32,16 +34,34 @@ class HomePage extends Component {
 			"is-size-5"
 		];
 		const textClass = textModifiers.join(" ");
+		const imgStyle = {
+			position: "absolute",
+			bottom: "20%",
+			left: "0"
+		};
+
+		const contStyle = {
+			position: "absolute",
+			width: "100%",
+			height: "100%"
+		};
 
 		return (
 			<section className="home-page">
+				<div style={contStyle}>
+					<img
+						style={imgStyle}
+						src={src}
+						alt="arc"
+						width="75%"
+						height="55%"
+					/>
+				</div>
+
 				{isLoading ? (
 					<Loader />
 				) : (
 					<div className="container padding-top-md">
-						<article className="box">
-							<p className={textClass}>{missionStatement}</p>
-						</article>
 						<div className="margin-top-lg center">
 							<Link
 								className="button is-info is-medium"
