@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-import MapStyle from "src/util/mapStyle.json";
+import GoogleMapReact from "google-map-react";
 
 import MapMarker from "src/components/MapMarker";
 
@@ -21,6 +20,8 @@ class PropertiesMap extends Component {
 				<MapMarker
 					key={index}
 					property={property}
+					lat={property.get("lat")}
+					lng={property.get("lng")}
 					dispatch={dispatch}
 				/>
 			);
@@ -29,13 +30,18 @@ class PropertiesMap extends Component {
 		const center = { lat: 33.5, lng: -81.454145 };
 		const zoom = 7;
 		return (
-			<GoogleMap
-				defaultCenter={center}
-				defaultZoom={zoom}
-				defaultOptions={{ styles: MapStyle }}
-			>
-				{markers}
-			</GoogleMap>
+			<div style={{ height: "75vh", width: "100%" }}>
+				<GoogleMapReact
+					defaultCenter={center}
+					defaultZoom={zoom}
+					bootstrapURLKeys={{
+						key: "AIzaSyBbf7WAdOD2-0q0KFDmwLxuXemKQObvG2U"
+					}}
+					hoverDistance={30 / 2}
+				>
+					{markers}
+				</GoogleMapReact>
+			</div>
 		);
 	}
 }
@@ -45,4 +51,4 @@ PropertiesMap.propTypes = {
 	dispatch: PropTypes.func
 };
 
-export default withScriptjs(withGoogleMap(PropertiesMap));
+export default PropertiesMap;

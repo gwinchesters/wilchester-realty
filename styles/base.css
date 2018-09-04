@@ -4097,8 +4097,8 @@ a.dropdown-item {
   padding: 20px; }
 
 .navbar {
-  background-color: white;
-  min-height: 3rem;
+  background-color: #b5b5b5;
+  min-height: 3.25rem;
   position: relative;
   z-index: 30; }
   .navbar.is-white {
@@ -4522,7 +4522,7 @@ a.dropdown-item {
   .navbar > .container {
     align-items: stretch;
     display: flex;
-    min-height: 3rem;
+    min-height: 3.25rem;
     width: 100%; }
   .navbar.has-shadow {
     box-shadow: 0 2px 0 0 whitesmoke; }
@@ -4540,18 +4540,18 @@ a.dropdown-item {
 
 html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
-  padding-top: 3rem; }
+  padding-top: 3.25rem; }
 
 html.has-navbar-fixed-bottom,
 body.has-navbar-fixed-bottom {
-  padding-bottom: 3rem; }
+  padding-bottom: 3.25rem; }
 
 .navbar-brand,
 .navbar-tabs {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
-  min-height: 3rem; }
+  min-height: 3.25rem; }
 
 .navbar-brand a.navbar-item:hover {
   background-color: transparent; }
@@ -4565,9 +4565,9 @@ body.has-navbar-fixed-bottom {
 .navbar-burger {
   cursor: pointer;
   display: block;
-  height: 3rem;
+  height: 3.25rem;
   position: relative;
-  width: 3rem;
+  width: 3.25rem;
   margin-left: auto; }
   .navbar-burger span {
     background-color: currentColor;
@@ -4617,14 +4617,14 @@ a.navbar-item,
   .navbar-link:hover,
   .navbar-link.is-active {
     background-color: #fafafa;
-    color: #b5b5b5; }
+    color: #0a0a0a; }
 
 .navbar-item {
   display: block;
   flex-grow: 0;
   flex-shrink: 0; }
   .navbar-item img {
-    max-height: 5rem; }
+    max-height: 1.75rem; }
   .navbar-item.has-dropdown {
     padding: 0; }
   .navbar-item.is-expanded {
@@ -4632,7 +4632,7 @@ a.navbar-item,
     flex-shrink: 1; }
   .navbar-item.is-tab {
     border-bottom: 1px solid transparent;
-    min-height: 3rem;
+    min-height: 3.25rem;
     padding-bottom: calc(0.5rem - 1px); }
     .navbar-item.is-tab:hover {
       background-color: transparent;
@@ -4681,7 +4681,7 @@ a.navbar-item,
   .navbar-link::after {
     display: none; }
   .navbar-menu {
-    background-color: white;
+    background-color: #b5b5b5;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {
@@ -4699,14 +4699,14 @@ a.navbar-item,
     top: 0; }
   .navbar.is-fixed-top .navbar-menu, .navbar.is-fixed-top-touch .navbar-menu {
     -webkit-overflow-scrolling: touch;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 3.25rem);
     overflow: auto; }
   html.has-navbar-fixed-top-touch,
   body.has-navbar-fixed-top-touch {
-    padding-top: 3rem; }
+    padding-top: 3.25rem; }
   html.has-navbar-fixed-bottom-touch,
   body.has-navbar-fixed-bottom-touch {
-    padding-bottom: 3rem; } }
+    padding-bottom: 3.25rem; } }
 
 @media screen and (min-width: 1088px) {
   .navbar,
@@ -4716,7 +4716,7 @@ a.navbar-item,
     align-items: stretch;
     display: flex; }
   .navbar {
-    min-height: 3rem; }
+    min-height: 3.25rem; }
     .navbar.is-spaced {
       padding: 1rem 2rem; }
       .navbar.is-spaced .navbar-start,
@@ -4830,16 +4830,16 @@ a.navbar-item,
     top: 0; }
   html.has-navbar-fixed-top-desktop,
   body.has-navbar-fixed-top-desktop {
-    padding-top: 3rem; }
+    padding-top: 3.25rem; }
   html.has-navbar-fixed-bottom-desktop,
   body.has-navbar-fixed-bottom-desktop {
-    padding-bottom: 3rem; }
+    padding-bottom: 3.25rem; }
   html.has-spaced-navbar-fixed-top,
   body.has-spaced-navbar-fixed-top {
-    padding-top: 5rem; }
+    padding-top: 5.25rem; }
   html.has-spaced-navbar-fixed-bottom,
   body.has-spaced-navbar-fixed-bottom {
-    padding-bottom: 5rem; }
+    padding-bottom: 5.25rem; }
   a.navbar-item.is-active,
   .navbar-link.is-active {
     color: #0a0a0a; }
@@ -6633,20 +6633,27 @@ label.panel-block {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: "Times New Roman", Times, serif; }
+
+.app-container {
+  background-color: #b5b5b5; }
 
 /* HOME PAGE */
 .home-page {
-  background-color: #b5b5b5;
+  background-image: linear-gradient(#b5b5b5, #7a7a7a);
   height: 80vh; }
 
 /* PROPERTIES PAGE */
 .properties-page {
-  background-color: #b5b5b5; }
+  background-image: linear-gradient(#b5b5b5, #4a4a4a); }
 
 .map-container {
   height: 100vh;
   width: 100%; }
+
+.marker {
+  height: 15px;
+  width: 15px; }
 
 /* LOGIN PAGE */
 .login-page {
@@ -6666,7 +6673,7 @@ body {
   animation: pulse 750ms infinite;
   animation-delay: 250ms; }
   .loading:before, .loading:after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 16px;

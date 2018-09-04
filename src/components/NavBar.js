@@ -12,7 +12,7 @@ class NavBar extends Component {
 	 */
 	render() {
 		return (
-			<nav className="navbar is-dark">
+			<nav className="navbar is-transparent">
 				<div className="navbar-brand">
 					<img alt="Logo" src={logoSrc} />
 					<a
@@ -27,12 +27,12 @@ class NavBar extends Component {
 					</a>
 				</div>
 				<div className="navbar-menu">
-					<div className="navbar-start">
-						<NavLink className="navbar-item" to="/">
-							Home
-						</NavLink>
+					<div className="navbar-end margin-right-lg">
 						<NavLink className="navbar-item" to="/properties">
-							Properties
+							<p className="is-size-5">PROPERTIES</p>
+						</NavLink>
+						<NavLink className="navbar-item" to="/">
+							<p className="is-size-5">ABOUT</p>
 						</NavLink>
 					</div>
 				</div>

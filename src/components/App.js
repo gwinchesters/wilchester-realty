@@ -26,7 +26,7 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<div>
+				<div className="app-container">
 					<NavBar />
 					<Routes />
 					<ModalContainer />
