@@ -25,8 +25,6 @@ export function jsonHandler(response) {
  * @param  {String} method The type of request to make GET, POST, PUT, DELETE
  * @param  {Object} body   Optional content to include as stringified JSON
  * in the request body
- * @param  {Boolean} isMultiPartForm True if request body should be for a
- * multipart form
  * @return {Object}
  */
 export function buildRequestObject(method, body) {
