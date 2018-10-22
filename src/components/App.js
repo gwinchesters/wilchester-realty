@@ -3,9 +3,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 /** Internal Dependencies */
-import ModalContainer from "src/containers/ModalContainer";
 import NavBar from "src/components/NavBar";
-import Routes from "src/components/Routes";
+import UnderConstruction from "src/components/pages/UnderConstruction";
 import Footer from "src/components/Footer";
 import "src/util/fontAwesomeIcons.js";
 import "styles/base.scss";
@@ -28,8 +27,7 @@ class App extends Component {
 			<Router>
 				<div className="app-container">
 					<NavBar />
-					<Routes />
-					<ModalContainer />
+					<UnderConstruction />
 					<Footer />
 				</div>
 			</Router>
